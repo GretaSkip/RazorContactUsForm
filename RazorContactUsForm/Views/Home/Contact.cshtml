@@ -1,0 +1,15 @@
+﻿@model ContactModel
+
+@using (Html.BeginForm("GetInformation", "Home", FormMethod.Post))
+{
+<div class="container-full" style="background-color:aliceblue">
+    <div class="container">
+        @Html.LabelFor(x => x.Name)
+        @Html.TextBoxFor(x => x.Name)
+
+        @Html.LabelFor(x => x.Description)
+        @Html.TextBoxFor(x => x.Description)
+        <input type="submit" value="Submit" />
+    </div>
+</div>
+}
