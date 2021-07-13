@@ -36,7 +36,15 @@ namespace RazorContactUsForm.Controllers
 
         public IActionResult GetInformation(ContactModel model)
         {
-            return View(model);
+            if (ModelState.IsValid)
+            {
+                return View(model);
+            }
+            else
+            {
+                return View("EntryFailed");
+            }
+
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
